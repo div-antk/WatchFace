@@ -9,6 +9,27 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    var hourHand:SKSpriteNode = SKSpriteNode()
+    var minuteHand:SKSpriteNode = SKSpriteNode()
+    var secondHand:SKSpriteNode = SKSpriteNode()
+    
+    override func sceneDidLoad() {
+        
+        // 時針
+        if let hrHand:SKSpriteNode = self.childNode(withName: "HourHand") as? SKSpriteNode {
+            hourHand = hrHand
+        }
+        
+        // 分針
+        if let minHand:SKSpriteNode = self.childNode(withName: "MinuteHand") as? SKSpriteNode {
+            minuteHand = minHand
+        }
+        
+        // 秒針
+        if let secHand:SKSpriteNode = self.childNode(withName: "SecondHand") as? SKSpriteNode {
+            secondHand = secHand
+        }
+    }
     
     fileprivate var label : SKLabelNode?
     fileprivate var spinnyNode : SKShapeNode?
@@ -78,6 +99,7 @@ class GameScene: SKScene {
         }
     }
     
+    // 時間
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
